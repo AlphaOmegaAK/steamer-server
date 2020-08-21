@@ -37,9 +37,6 @@ const register = async (req, res) => {
 };
 
 
-
-
-
 // Login Controller
 const login = async (req, res) => {
   console.log(req.body);
@@ -74,12 +71,18 @@ const login = async (req, res) => {
 };
 
 
-
-
-
 // Verify Controller
 const verify = (req, res) => {
-
+  jwt.verify(token, process.env.JWT_SECRET, (err, decodedUser) => {
+    if (err || !decodedUser) {
+      return res.status(401).json({
+        message: 'Your Shall Not Pass!'
+      });
+    }
+    req.currentUser = decodedUser;
+    res.status(200).json({ user: decodedUser })
+    next()
+  })
 }
 
 
