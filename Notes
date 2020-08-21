@@ -1,0 +1,70 @@
+const eraseDatabaseOnSync = true;
+ 
+connectDb().then(async () => {
+  if (eraseDatabaseOnSync) {
+    await Promise.all([
+      models.User.deleteMany({}),
+      models.Message.deleteMany({}),
+    ]);
+  }
+ -------------ROUTES----------------------
+ -------- USERS ---------------
+  router.get('/', async (req, res) => {
+  const users = await req.context.models.User.find();
+  return res.send(users);
+});
+
+router.get('/:userId', async (req, res) => {
+  const user = await req.context.models.User.findById(
+    req.params.userId,
+  );
+  return res.send(user);
+});
+
+------------- POSTS ------------
+router.get('/', async (req, res) => {
+  const posts = await req.context.models.Post.find();
+  return res.send(posts);
+});
+
+
+router.get('/:messageId', async (req, res) => {
+  const post = await req.context.models.Post.findById(
+    req.params.postId,
+  );
+  return res.send(post);
+});
+
+router.post('/', async (req, res) => {
+  const post = await req.context.models.Post.create({
+    title
+    body req.body
+    topic
+
+  });
+ 
+  return res.send(post);
+});
+
+router.delete('/:postId', async (req, res) => {
+  const post = await req.context.models.Post.findById(
+    req.params.postId,
+  );
+ 
+  if (post) {
+    await post.remove();
+  }
+ 
+  return res.send(post);
+});
+
+------if user delete, delete all messages -----------
+userSchema.pre('remove', function(next) {
+  this.model('Post').deleteMany({ user: this._id }, next);
+});
+
+
+-------STEPS-------------
+
+----Server.js
+is looking for app.use('*start url*', routes.)
