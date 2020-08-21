@@ -20,11 +20,11 @@ app.use(express.json());
 
 // 
 // Base Route
-app.use('/base', routes.base);
-// Post Routes
-// app.use('/posts', routes.posts);
+app.use('/', routes.base);
 // Auth Routes
 app.use('/auth', routes.auth);
+// Post Routes
+// app.use('/posts', routes.posts);
 
 
 

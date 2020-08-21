@@ -6,7 +6,6 @@ const db = require('../models')
 
 // Register Controller
 const register = async (req, res) => {
-  const rb = req.body
   if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName)
   // TODO Switch Statment for better edge case
   {
