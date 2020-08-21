@@ -7,7 +7,9 @@ const db = require('../models')
 // Register Controller
 const register = async (req, res) => {
   const rb = req.body
-  if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName) {
+  if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName)
+  // TODO Switch Statment for better edge case
+  {
     return res.status(400).json({ message: 'All Fields Are Required To Register. Please Try Again.' });
   }
   if (req.body.password.length < 6) {
@@ -39,9 +41,37 @@ const register = async (req, res) => {
 
 
 // Login Controller
-const login = (req, res) => {
-
-}
+const login = async (req, res) => {
+  console.log(req.body);
+  try {
+    const foundUser = await db.User.findOne({ email: req.body.username });
+    if (!foundUser) {
+      return res.status(400).json({
+        status: 400,
+        message: 'Username or Password are Incorrect'
+        // TODO Switch Statment for better edge case
+      });
+    }
+    const passMatch = await bcrypt.compare(req.body.password, foundUser.password);
+    if (!passMatch) {
+      return res.status(400).json({
+        status: 400,
+        message: 'Passwords Do not Match'
+      });
+    }
+    const pL = { id: foundUser._id };
+    const secret = process.env.JWT_SECRET;
+    const expiration = { expiresIn: "1h" };
+    const token = await jwt.sign(pL, secret, expiration);
+    res.status(200).json({ token });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      status: 500,
+      message: "Something Went Wrong, Please Try Again",
+    });
+  }
+};
 
 
 
