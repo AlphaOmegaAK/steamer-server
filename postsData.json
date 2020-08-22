@@ -2,39 +2,33 @@
   "posts": [
     {
       "title": "The Day The Earth Stood Still",
-      "topic": "",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!",
-      "comments": "Quidem modi quasi rerum, repellendus eligendi veritatis!"
+      "topic": "Alien Invasion",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!"
     },
     {
       "title": "Who Won The Race The Rabbit Or The Turtle",
-      "topic": "Time",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!",
-      "comments": "Quidem modi quasi rerum, repellendus eligendi veritatis!"
+      "topic": "Time Trave;",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!"
     },
     {
       "title": "Ring Ring Ring Banana Phone",
       "topic": "Cellphones",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!",
-      "comments": "Quidem modi quasi rerum, repellendus eligendi veritatis!"
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!"
     },
     {
       "title": "The Simpsons Did it",
       "topic": "Time Travel",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!",
-      "comments": "Quidem modi quasi rerum, repellendus eligendi veritatis!"
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!"
     },
     {
       "title": "The Brothers Are Fighting Again",
       "topic": "Family Feud",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!",
-      "comments": "Quidem modi quasi rerum, repellendus eligendi veritatis!"
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!"
     },
     {
       "title": "My Boss Is On My Ass Again",
       "topic": "Work Related",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!",
-      "comments": "Quidem modi quasi rerum, repellendus eligendi veritatis!"
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi ipsam ab aliquid iure labore consequatur perspiciatis maxime, debitis neque modi porro. Quidem modi quasi rerum, repellendus eligendi veritatis!"
     }
   ]
 }

@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
   title: {
     type: String,
-    maxlength: 30,
-    minlength: 10,
+    maxlength: 50,
+    minlength: 2,
     unique: [
       true, 'There\'s already a thread about this'],
     required: [
@@ -13,7 +13,7 @@ const postSchema = new mongoose.Schema({
   },
   topic: {
     type: String,
-    maxlength: 30,
+    maxlength: 50,
     minlength: 4,
     required: [
       true, 'You must be talking about something, what is it?'
@@ -30,7 +30,7 @@ const postSchema = new mongoose.Schema({
   comments: [
     {
       body: String,
-      date: Date,
+
     }
   ],
   meta: {

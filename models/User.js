@@ -5,18 +5,18 @@ const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     minlength: 4,
-    maxlength: 15,
+    maxlength: 25,
     required: [true, 'First Name Required'],
   },
   lastName: {
     type: String,
     minlength: 4,
-    maxlength: 20,
+    maxlength: 35,
   },
   email: {
     type: String,
     minlength: 8,
-    maxlength: 25,
+    maxlength: 45,
     trim: true,
     lowercase: true,
     unique: [true, 'email already in use'],
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     minlength: 6,
-    maxlength: 15,
+    maxlength: 25,
     unique: [true, 'username is invalid'],
     required: [true, 'Username Required for Login']
   },
