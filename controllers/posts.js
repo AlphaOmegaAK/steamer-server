@@ -8,6 +8,7 @@ const index = (req, res) => {
     res.status(200).json(foundPost);
   });
 };
+// TODO -- Do check of found posts, if length 0 then sends back : no posts
 
 // ! -----  Posts Show  -----
 const show = (req, res) => {

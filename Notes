@@ -68,3 +68,10 @@ userSchema.pre('remove', function(next) {
 
 ----Server.js
 is looking for app.use('*start url*', routes.)
+Routes, routes index, to sepecific router file, then to controllers index to specific controller
+
+
+
+res.json({
+    //   name: 'Art', age: 22, isActive: true
+    // })

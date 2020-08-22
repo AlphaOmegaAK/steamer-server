@@ -2,10 +2,10 @@ const db = require('../models');
 
 // ! -----  Users index  -----
 const index = (req, res) => {
-  db.User.find({}, (err, foundUsers) => {
-    if (err) console.log('Error Finding User:', err);
+  db.User.find({}, (err, foundUser) => {
+    if (err) console.log('Error in Users Index:', err);
 
-    res.status(200).json(foundUsers);
+    res.status(200).json(foundUser);
   });
 };
 

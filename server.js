@@ -1,4 +1,3 @@
-//! 1
 
 const express = require('express')
 const app = express();
@@ -23,6 +22,8 @@ app.use(express.json());
 app.use('/', routes.base);
 // Auth Routes
 app.use('/auth', routes.auth);
+// Users Routes
+app.use('/users', routes.users);
 // Post Routes
 app.use('/posts', routes.posts);
 
