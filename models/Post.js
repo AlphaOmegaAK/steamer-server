@@ -16,7 +16,7 @@ const postSchema = new mongoose.Schema({
   topic: {
     type: String,
     maxlength: 30,
-    minlength: 10,
+    minlength: 4,
     required: [
       true, 'You must be talking about something, what is it?'
 
@@ -26,7 +26,7 @@ const postSchema = new mongoose.Schema({
     type: String,
     maxlength: 250,
     required: [
-      true, 'Speak up please'
+      true, 'Speak up please Your Are Important.'
     ]
   },
   comments: [
