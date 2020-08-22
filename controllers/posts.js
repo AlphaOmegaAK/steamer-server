@@ -5,13 +5,13 @@ const index = (req, res) => {
   db.Post.find({}, (err, foundPost) => {
     if (err) console.log('Error in Post#index:', err);
 
-    res.status(200).json(foundGame);
+    res.status(200).json(foundPost);
   });
 };
 
 // ! -----  Posts Show  -----
 const show = (req, res) => {
-  db.Post.findById(req.paras.id, (err, foundPost) => {
+  db.Post.findById(req.params.id, (err, foundPost) => {
     if (err) console.log('Error in Posts#show:', err);
 
     res.status(200).send(foundPost)
@@ -33,7 +33,7 @@ const update = (req, res) => {
     if (err) console.log('Error in post#update:', err);
 
     if (!updatePost) {
-      res.status(400).json({ message: `Could\'t find Post with Id ${req.params.id}` })
+      res.status(400).json({ message: `Could\'t find Post with Id ${req.params.id}` });
     }
 
     res.json(updatedPost)
@@ -42,7 +42,7 @@ const update = (req, res) => {
 
 // ! -----  Posts Delete  -----
 const destroy = (req, res) => {
-  db.Post.findByIdAndDelete(req.paras.id, (err, deletedPost) => {
+  db.Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
     if (err) console.log('Error in Posts#destory:', err);
 
     res.status(200).json(deletedPost)

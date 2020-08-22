@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "firstName": "John",
+      "lastName:": "Wick",
+      "email": "jWick@gmail.com",
+      "username": "JWickk",
+      "password": "qwerty1234",
+      "location": "USA"
+    },
+    {
+      "firstName": "John",
+      "lastName:": "Snow",
+      "email": "JohnSnow@Winterfell.com",
+      "username": "JSnowDiappoint",
+      "password": "qwerty1234",
+      "location": "The Wall"
+    },
+    {
+      "firstName": "Katy",
+      "lastName:": "Perry",
+      "email": "KatyP@gmail.com",
+      "username": "KatyThePerry",
+      "password": "qwerty1234",
+      "location": "God Knows Where"
+    },
+    {
+      "firstName": "Adam",
+      "lastName:": "Mada",
+      "email": "AdamTheFirst@gmail.com",
+      "username": "AdamOne",
+      "password": "qwerty1234",
+      "location": "The Garden"
+    },
+    {
+      "firstName": "Johnny",
+      "lastName:": "AppleSeed",
+      "email": "TheSeeding@gmail.com",
+      "username": "TheSeed",
+      "password": "qwerty1234",
+      "location": "East Brunswick"
+    },
+    {
+      "firstName": "Tabby",
+      "lastName:": "Ursola",
+      "email": "TadyU@gmail.com",
+      "username": "Ursala",
+      "password": "qwerty1234",
+      "location": "New England"
+    },
+    {
+      "firstName": "Austin",
+      "lastName:": "Powers",
+      "email": "ShagNow@OrLater.com",
+      "username": "moooole@gmail.com",
+      "password": "qwerty1234",
+      "location": "Oh Behave Babbyy"
+    }
+  ]
+}
