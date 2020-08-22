@@ -1,8 +1,7 @@
 module.exports = {
   base: require('./base'),
   auth: require('./auth'),
-
-  // posts: require('./posts'),
+  posts: require('./posts'),
 }
 
 

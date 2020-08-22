@@ -1,5 +1,6 @@
 const db = require('../models');
 
+//!  -----  Posts Index  -----
 const index = (req, res) => {
   db.Post.find({}, (err, foundPost) => {
     if (err) console.log('Error in Post#index:', err);
@@ -8,6 +9,7 @@ const index = (req, res) => {
   });
 };
 
+// ! -----  Posts Show  -----
 const show = (req, res) => {
   db.Post.findById(req.paras.id, (err, foundPost) => {
     if (err) console.log('Error in Posts#show:', err);
@@ -16,6 +18,7 @@ const show = (req, res) => {
   });
 };
 
+// ! -----  Posts Create  -----
 const create = (req, res) => {
   db.Post.create(req.body, (err, savedPost) => {
     if (err) console.log('Error in Post#create:', err);
@@ -24,6 +27,7 @@ const create = (req, res) => {
   });
 };
 
+// ! -----  Posts Update  -----
 const update = (req, res) => {
   db.Post.findByIdAndUpdate(req.params.id, { new: true }, (err, updatedPost) => {
     if (err) console.log('Error in post#update:', err);
@@ -36,6 +40,7 @@ const update = (req, res) => {
   });
 };
 
+// ! -----  Posts Delete  -----
 const destroy = (req, res) => {
   db.Post.findByIdAndDelete(req.paras.id, (err, deletedPost) => {
     if (err) console.log('Error in Posts#destory:', err);

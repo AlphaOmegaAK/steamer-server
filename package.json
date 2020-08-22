@@ -1,7 +1,7 @@
 {
   "name": "steamer-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Steaner Server Side with Node/Express and MongoDB",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

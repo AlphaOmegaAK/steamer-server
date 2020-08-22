@@ -1,6 +1,6 @@
 module.exports = {
   base: require('./base'),
   auth: require('./auth'),
-  // posts: require('./postsController'),
+  posts: require('./posts'),
   // users: require('./usersController'),
 }

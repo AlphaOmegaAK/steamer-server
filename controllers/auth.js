@@ -2,9 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../models')
 
-
-
-// Register Controller
+// ! -----  Register Controller  -----
 const register = async (req, res) => {
   if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName)
   // TODO Switch Statment for better edge case
@@ -36,7 +34,7 @@ const register = async (req, res) => {
 };
 
 
-// Login Controller
+// ! -----  Login Controller  -----
 const login = async (req, res) => {
   console.log(req.body);
   try {
@@ -70,7 +68,7 @@ const login = async (req, res) => {
 };
 
 
-// Verify Controller
+// ! -----  Verify Controller  -----
 const verify = (req, res) => {
   jwt.verify(token, process.env.JWT_SECRET, (err, decodedUser) => {
     if (err || !decodedUser) {

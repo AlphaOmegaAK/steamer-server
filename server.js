@@ -18,13 +18,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-// 
+
 // Base Route
 app.use('/', routes.base);
 // Auth Routes
 app.use('/auth', routes.auth);
 // Post Routes
-// app.use('/posts', routes.posts);
+app.use('/posts', routes.posts);
 
 
 
