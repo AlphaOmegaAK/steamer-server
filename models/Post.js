@@ -27,12 +27,12 @@ const postSchema = new mongoose.Schema({
       true, 'Speak up please Your Are Important.'
     ]
   },
-  comments: [
-    {
-      body: String,
+  // comments: [
+  //   {
+  //     body: String,
 
-    }
-  ],
+  //   }
+  // ],
   meta: {
     votes: Number,
     favs: Number,
@@ -41,6 +41,12 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  user: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ]
 }, { timestamps: true })
 
 const Post = mongoose.model('Post', postSchema);
