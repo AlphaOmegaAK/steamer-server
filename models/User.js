@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     minlength: 8,
-    maxlength: 45,
+    maxlength: 50,
     trim: true,
     lowercase: true,
     unique: [true, 'email already in use'],
@@ -31,8 +31,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    minlength: 6,
-    maxlength: 15,
+    minlength: 3, //!!! << Change Length to 6
     required: [true, 'Please secure your account',],
   },
   avatar: {
