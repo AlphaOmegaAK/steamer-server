@@ -26,9 +26,9 @@ app.use('/', routes.base);
 // Auth Routes
 app.use('/auth', routes.auth);
 // Users Routes
-app.use('/users', routes.users);
+app.use('/api/v1/users', routes.users);
 // Post Routes
-app.use('/posts', routes.posts);
+app.use('/api/v1/posts', routes.posts);
 
 
 
