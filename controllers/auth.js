@@ -38,7 +38,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   console.log(req.body);
   try {
-    const foundUser = await db.User.findOne({ email: req.body.username });
+    const foundUser = await db.User.findOne({ username: req.body.username });
     if (!foundUser) {
       return res.status(400).json({
         status: 400,
