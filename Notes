@@ -75,3 +75,11 @@ Routes, routes index, to sepecific router file, then to controllers index to spe
 res.json({
     //   name: 'Art', age: 22, isActive: true
     // })
+
+posts SHow for users 
+
+  db.User.findOne({'articles': req.params.id})
+    .populate({
+      path: 'posts',
+      match: {_id: req.params.id}
+    })
