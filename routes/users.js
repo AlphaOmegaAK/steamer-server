@@ -7,4 +7,6 @@ router.post('/', ctrl.users.create);
 router.put('/:id', ctrl.users.update);
 router.delete('/:id', ctrl.users.destroy);
 
+router.post('/:userId/createpost', ctrl.users.addPost)
+// id = userId
 module.exports = router;

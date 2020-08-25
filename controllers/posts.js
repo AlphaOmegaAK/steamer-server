@@ -14,17 +14,18 @@ const index = (req, res) => {
 const show = (req, res) => {
   db.Post.findById(req.params.id, (err, foundPost) => {
     if (err) console.log('Error in Posts#show:', err);
-
+    // populate() + exec
     res.status(200).send(foundPost)
   });
 };
 
 // ! -----  Posts Create  -----
 const create = (req, res) => {
+  const userId = req.params.id
   db.Post.create(req.body, (err, newPost) => {
     if (err) console.log('Error in Post#create:', err);
     console.log(newPost);
-    db.User.findById(req.body.userId, (err, foundUser) => {
+    db.User.findById(userId, (err, foundUser) => {
       if (err) console.log('Error In finding User to New Post:', err);
       foundUser.posts.push(newPost);
       foundUser.save((err, savedUser) => {
@@ -32,7 +33,8 @@ const create = (req, res) => {
         console.log('User:', savedUser);
       })
     })
-
+    // check with console.log for post id
+    // Change newPost varible to look at newPostId and save that to Found User
     res.status(200).json(savePost);
   });
 };
@@ -83,14 +85,14 @@ const destroy = (req, res) => {
 
 // ? Updated Posts Delete For User
 // router.delete('/:id', (req, res) => {
-//   db.Article.findByIdAndDelete(req.params.id, (err, deletedArticle) => {
+//   db.Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
 //     if (err) return console.log(err);
-//     console.log(deletedArticle);
-//     db.Author.findOne({ 'articles': req.params.id }, (err, foundAuthor) => {
-//       foundAuthor.articles.remove(req.params.id);
-//       foundAuthor.save((err, updatedAuthor) => {
-//         console.log(updatedAuthor);
-//         res.redirect('/articles');
+//     console.log(deletedPost);
+//     db.User.findOne({ 'posts': req.params.id }, (err, foundUser) => {
+//       foundUser.posts.remove(req.params.id);
+//       foundUser.save((err, foundUser) => {
+//         console.log(foundUser);
+//         res.redirect('/posts');
 //       })
 //     })
 //   });

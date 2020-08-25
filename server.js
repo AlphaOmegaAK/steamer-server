@@ -8,7 +8,7 @@ const cors = require('cors')
 const routes = require('./routes');
 
 app.use(cors({
-  origin: [`http://localhost:4000`],
+  origin: [`http://localhost:4000`, `http://localhost:3000`],
   methods: "GET,POST,PUT,DELETE",
   optionsSuccessStatus: 200
 }));
@@ -19,14 +19,15 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.url} ${new Date().toLocaleTimeString()}`);
   next();
 });
+console.log();
 
 
 // Base Route
 app.use('/', routes.base);
 // Auth Routes
-app.use('/auth', routes.auth);
+app.use('/api/v1/auth', routes.auth);
 // Users Routes
-app.use('/api/v1/users', routes.users);
+app.use('/api/v1/users/', routes.users);
 // Post Routes
 app.use('/api/v1/posts', routes.posts);
 

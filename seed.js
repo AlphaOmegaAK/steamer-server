@@ -1,3 +1,4 @@
+require('dotenv').config();
 const db = require('./models');
 const data = require('./postsData.json');
 const data1 = require('./userData.json');
@@ -10,6 +11,8 @@ db.User.deleteMany({}, (err, deleteUsers) => {
     process.exit();
   });
 });
+
+
 db.Post.deleteMany({}, (err, deletePosts) => {
   db.Post.create(data.posts, (err, seededPosts) => {
     if (err) console.log(err);

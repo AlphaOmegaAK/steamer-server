@@ -49,11 +49,24 @@ const destroy = (req, res) => {
   });
 };
 
+const addPost = (req, res) => {
+  const userId = req.params.id
+  db.User.findById(userId, (err, foundUser) => {
+    if (err) console.log('Error is :', err);
 
+    db.Post.create(req.body, (err, createdPost) => {
+      if (err) console.log('Error is : ', err);
+      foundUser.post.push(createdPost.id)
+    })
+  })
+}
+
+post / userId / addPost
 module.exports = {
   index,
   show,
   create,
   update,
-  destroy
+  destroy,
+  addPost
 }

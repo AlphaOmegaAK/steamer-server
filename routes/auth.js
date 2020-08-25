@@ -3,6 +3,8 @@ const ctrl = require('../controllers');
 
 router.post('/register', ctrl.auth.register);
 router.post('/login', ctrl.auth.login);
-router.get('/verify', ctrl.auth.verify);
+router.post('/verify', ctrl.auth.verify);
+
+// GET in Production
 
 module.exports = router;

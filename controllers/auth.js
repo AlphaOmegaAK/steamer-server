@@ -4,6 +4,8 @@ const db = require('../models')
 
 // ! -----  Register Controller  -----
 const register = async (req, res) => {
+  console.log('Register Success')
+  console.log(req.body);
   if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName)
   // TODO Switch Statment for better edge case
   {
@@ -37,6 +39,7 @@ const register = async (req, res) => {
 // ! -----  Login Controller  -----
 const login = async (req, res) => {
   console.log(req.body);
+  console.log('Login Success!')
   try {
     const foundUser = await db.User.findOne({ username: req.body.username });
     if (!foundUser) {
