@@ -35,7 +35,7 @@ const create = (req, res) => {
     })
     // check with console.log for post id
     // Change newPost varible to look at newPostId and save that to Found User
-    res.status(200).json(createPost);
+    res.status(200).json({ message: 'Post created' });
   });
 };
 
