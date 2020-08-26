@@ -6,9 +6,9 @@ const db = require('../models')
 const register = async (req, res) => {
   console.log('Register Success')
   console.log(req.body);
-  if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName)
-  // TODO Switch Statment for better edge case
-  {
+  if (!req.body.username || !req.body.email || !req.body.password || !req.body.firstName) {
+    // TODO Switch Statment for better edge case
+
     return res.status(400).json({ message: 'All Fields Are Required To Register. Please Try Again.' });
   }
   if (req.body.password.length < 6) {
@@ -41,11 +41,11 @@ const login = async (req, res) => {
   console.log(req.body);
   console.log('Login Success!')
   try {
-    const foundUser = await db.User.findOne({ username: req.body.username });
+    const foundUser = await db.User.findOne({ email: req.body.email });
     if (!foundUser) {
       return res.status(400).json({
         status: 400,
-        message: 'Username or Password are Incorrect'
+        message: 'Email or Password are Incorrect'
         // TODO Switch Statment for better edge case
       });
     }
@@ -56,16 +56,18 @@ const login = async (req, res) => {
         message: 'Passwords Do not Match'
       });
     }
-    const pL = { id: foundUser._id };
+    const payload = { id: foundUser._id };
     const secret = process.env.JWT_SECRET;
     const expiration = { expiresIn: "1h" };
-    const token = await jwt.sign(pL, secret, expiration);
+
+    const token = await jwt.sign(payload, secret, expiration);
+
     res.status(200).json({ token });
   } catch (err) {
     console.log(err);
     return res.status(500).json({
       status: 500,
-      message: "Something Went Wrong, Please Try Again",
+      message: "Something Went Wrong with Login. Please Try Again",
     });
   }
 };
