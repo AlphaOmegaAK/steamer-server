@@ -139,8 +139,18 @@ const isEmpty = require("is-empty");module.exports = function validateLoginInput
 
 
 {
+	"firstName": "TestDummy"
+  "lastName": "Dummy1"
 	"username": "TestDude1",
 	"email": "testdude@gmail.com",
 	"password": "qwerty1234",
-	"firstName": "TestDummy"
+}
+
+{
+	"firstName": "Test"
+  "lastName": "Dummy"
+	"username": "TestDude2",
+	"email": "testdude@gmail.com",
+	"password": "qwerty1234",
+  "location": "API
 }

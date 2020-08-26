@@ -61,7 +61,7 @@ const addPost = (req, res) => {
   })
 }
 
-post / userId / addPost
+// post / userId / addPost
 module.exports = {
   index,
   show,
