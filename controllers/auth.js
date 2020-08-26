@@ -41,11 +41,11 @@ const login = async (req, res) => {
   console.log(req.body);
   console.log('Login Success!')
   try {
-    const foundUser = await db.User.findOne({ email: req.body.email });
+    const foundUser = await db.User.findOne({ username: req.body.username });
     if (!foundUser) {
       return res.status(400).json({
         status: 400,
-        message: 'Email or Password are Incorrect'
+        message: 'Username or Password are Incorrect'
         // TODO Switch Statment for better edge case
       });
     }
