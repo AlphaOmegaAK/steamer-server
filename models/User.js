@@ -44,10 +44,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  // post: [{
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'Post'
-  // }],
+  post: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Post'
+  }],
 }, { timestamps: true })
 
 const User = mongoose.model('User', userSchema);

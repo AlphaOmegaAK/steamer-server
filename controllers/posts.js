@@ -20,24 +20,35 @@ const show = (req, res) => {
 };
 
 // ! -----  Posts Create  -----
+// const create = (req, res) => {
+//   const userId = req.params.id
+//   db.Post.create(req.body, (err, newPost) => {
+//     if (err) console.log('Error in Post#create:', err);
+//     console.log(newPost);
+//     db.User.findById(userId, (err, foundUser) => {
+//       if (err) console.log('Error In finding User to New Post:', err);
+//       console.log(foundUser);
+//       foundUser.post.push(newPost);
+
+//       foundUser.save((err, savedUser) => {
+//         if (err) console.log('Error in saving Post to User:', err);
+//         console.log('User:', savedUser);
+//       })
+//     })
+//     // check with console.log for post id
+//     // Change newPost varible to look at newPostId and save that to Found User
+//     res.status(200).json({ message: 'Post created' });
+//   });
+// };
+
 const create = (req, res) => {
-  const userId = req.params.id
   db.Post.create(req.body, (err, newPost) => {
-    if (err) console.log('Error in Post#create:', err);
+    if (err) console.log('Error in Post Creation:', err);
     console.log(newPost);
-    db.User.findById(userId, (err, foundUser) => {
-      if (err) console.log('Error In finding User to New Post:', err);
-      foundUser.posts.push(newPost);
-      foundUser.save((err, savedUser) => {
-        if (err) console.log('Error in saving Post to User:', err);
-        console.log('User:', savedUser);
-      })
-    })
-    // check with console.log for post id
-    // Change newPost varible to look at newPostId and save that to Found User
-    res.status(200).json({ message: 'Post created' });
-  });
-};
+    res.status(200).json({ message: 'Post Created !' });
+  })
+}
+
 
 // ! -----  Posts Update  -----
 const update = (req, res) => {
@@ -48,7 +59,7 @@ const update = (req, res) => {
       res.status(400).json({ message: `Could\'t find Post with Id ${req.params.id}` });
     }
 
-    res.json(updatedPost)
+    res.json({ message: 'Post Updated' })
   });
 };
 // ? Better User Updated Post 
@@ -79,7 +90,7 @@ const destroy = (req, res) => {
   db.Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
     if (err) console.log('Error in Posts#destory:', err);
 
-    res.status(200).json(deletedPost)
+    res.status(200).json({ message: 'Post Deleted' })
   });
 };
 
