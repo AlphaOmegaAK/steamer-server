@@ -52,14 +52,14 @@ const create = (req, res) => {
 
 // ! -----  Posts Update  -----
 const update = (req, res) => {
-  db.Post.findByIdAndUpdate(req.params.id, { new: true }, (err, updatedPost) => {
+  db.Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatePost) => {
     if (err) console.log('Error in post#update:', err);
 
     if (!updatePost) {
       res.status(400).json({ message: `Could\'t find Post with Id ${req.params.id}` });
     }
 
-    res.json({ message: 'Post Updated' })
+    res.json(updatePost)
   });
 };
 // ? Better User Updated Post 
